@@ -1,0 +1,9 @@
+<p style="font-weight: bold">{{ memory }}</p>
+<p>{{ memory.text }}</p>
+
+<form action="{% url 'memories:detail' memory.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="title" id="memory_title" />
+    <label for="memory_title">Title</label>
+    <input type="submit" value="Save" />
+</form>

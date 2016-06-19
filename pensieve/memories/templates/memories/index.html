@@ -1,0 +1,24 @@
+<!--!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html-->
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'screen.css' %}" />
+
+{% if recent_memories %}
+    <ul>
+    {% for memory in recent_memories %}
+        <li><a href="{% url 'memories:detail' memory.id %}">{{ memory }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No memories are available.</p>
+{% endif %}
