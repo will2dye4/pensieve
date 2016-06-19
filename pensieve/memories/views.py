@@ -1,6 +1,5 @@
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
 from django.views import generic
 
 from .models import Memory
@@ -23,13 +22,3 @@ class MemoryDetailView(generic.DetailView):
         memory.title = request.POST['title']
         memory.save()
         return HttpResponseRedirect(reverse('memories:detail', args=(kwargs['pk'],)))
-
-
-def detail(request, memory_id):
-    memory = get_object_or_404(Memory, pk=memory_id)
-    if request.method == 'POST':
-        memory.title = request.POST['title']
-        memory.save()
-        return HttpResponseRedirect(reverse('memories:detail', args=(memory_id,)))
-    else:
-        return render(request, 'memories/detail.html', {'memory': memory})
