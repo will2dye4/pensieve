@@ -1,0 +1,68 @@
+body {
+    background-color: lightblue;
+    font-family: Georgia, Garamond, Times, serif;
+}
+
+#pensieve-header {
+    background-color: white;
+    height: 100px;
+    border-bottom: 2px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#pensieve-greeting {
+    float: right;
+    padding-right: 10px;
+}
+
+#pensieve-logo {
+    display: inline-block;
+}
+
+#pensieve-logo h1 {
+    font-family: "Edwardian Script ITC", cursive;
+    font-size: 54pt;
+    display: inline;
+}
+
+#pensieve-logo img {
+    float: left;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#pensieve-tagline {
+    font-style: italic;
+    padding-left: 125px;
+    display: block;
+    margin-top: -15px;
+}
+
+#pensieve-nav {
+    display: inline-block;
+    padding-left: 100px;
+}
+
+#pensieve-nav p {
+    display: inline-block;
+}
+
+#pensieve-content {
+    margin-top: 110px;
+}
+
+#pensieve-footer {
+    background-color: lightgray;
+    font-size: 11pt;
+    font-variant: small-caps;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid gray;
+}

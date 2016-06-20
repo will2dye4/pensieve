@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Pensieve is a place for memories." />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="keywords" content="pensieve, memories, ancestry, heritage, history, oral history" />
+    <meta name="author" content="William Dye" />
+    <meta name="copyright" content="Copyright (c) 2016 William Dye" />
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/screen.css' %}" />
+
+    {% block head_extras %}{% endblock %} {# Allow child templates to include additional head elements. #}
+
+    <title>{% block title %}Pensieve{% endblock %}</title>
+</head>
+<body>
+    <section id="pensieve-header" role="region">
+        {% block header %}
+            <article id="pensieve-greeting">
+            {% if user.is_authenticated %}
+                <p>Welcome, {{ user }}!</p>
+            {% else %}
+                <p>You are not logged in</p>
+            {% endif %}
+            </article>
+
+            <article id="pensieve-logo">
+                <img src="{% static 'images/pensieve.png' %}" />
+                <h1>Pensieve</h1>
+                <span id="pensieve-tagline">a place for memories</span>
+            </article>
+
+            <article id="pensieve-nav">
+                <a href="{% url 'memories:index' %}">Memories</a> |
+                <p>Prompts</p>
+            </article>
+        {% endblock %}
+    </section>
+
+    <section id="pensieve-content" role="main">
+        {% block content %}
+        {% endblock %}
+    </section>
+
+    <section id="pensieve-footer" role="region">
+        {% block footer %}
+            <span>copyright &copy; {% now "Y" %} william dye</span>
+        {% endblock %}
+    </section>
+</body>
+</html>

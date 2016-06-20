@@ -30,8 +30,8 @@ class Prompt(models.Model):
 class Memory(models.Model):
     prompt = models.ForeignKey(Prompt, on_delete=models.DO_NOTHING, related_name='responses', null=True)
     title = models.CharField(max_length=256, null=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name='created time')
+    updated = models.DateTimeField(auto_now=True, verbose_name='updated time')
     creator = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='memories', null=True)
     text = models.TextField()
     year = models.IntegerField(null=True)
