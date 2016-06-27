@@ -1,16 +1,49 @@
+html {
+    height: 100%;
+}
+
 body {
-    background-color: lightblue;
     font-family: Georgia, Garamond, Times, serif;
+    height: 100%;
+}
+
+a {
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline !important;
 }
 
 #pensieve-header {
-    background-color: white;
-    height: 100px;
+    height: 60px;
     border-bottom: 2px solid black;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: steelblue;
+    color: white;
+}
+
+#pensieve-header a {
+    text-decoration: none;
+}
+
+/*
+#pensieve-header a:hover {
+    background-color: white;
+    color: steelblue !important;
+}
+*/
+
+#pensieve-header a:visited {
+    color: white;
+}
+
+#pensieve-header-wrapper {
+    width: 80%;
+    margin: auto;
 }
 
 #pensieve-greeting {
@@ -20,30 +53,29 @@ body {
 
 #pensieve-logo {
     display: inline-block;
+    margin-top: 5px;
 }
 
 #pensieve-logo h1 {
     font-family: "Edwardian Script ITC", cursive;
-    font-size: 54pt;
+    font-size: 36pt;
     display: inline;
+    padding-left: 10px;
 }
 
 #pensieve-logo img {
     float: left;
-    padding-left: 10px;
-    margin-top: 10px;
+    padding-top: 5px;
 }
 
-#pensieve-tagline {
-    font-style: italic;
-    padding-left: 125px;
-    display: block;
-    margin-top: -15px;
+#pensieve-logo a:hover {
+    text-decoration: none;
 }
 
 #pensieve-nav {
     display: inline-block;
-    padding-left: 100px;
+    width: 50%;
+    text-align: center;
 }
 
 #pensieve-nav p {
@@ -51,7 +83,10 @@ body {
 }
 
 #pensieve-content {
-    margin-top: 110px;
+    margin: 80px auto;
+    padding: 10px;
+    height: 90%;
+    width: 80%;
 }
 
 #pensieve-footer {
@@ -65,4 +100,26 @@ body {
     width: 100%;
     text-align: center;
     border-top: 1px solid gray;
+}
+
+.pensieve-callout {
+    background-color: steelblue;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: white;
+    padding: 0 15px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.right-align {
+    text-align: right;
+}
+
+h1.pensieve-content-logo {
+    font-family: "Edwardian Script ITC", cursive;
+    font-size: 64pt;
+    margin: 0;
 }

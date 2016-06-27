@@ -20,26 +20,27 @@
 </head>
 <body>
     <section id="pensieve-header" role="region">
-        {% block header %}
-            <article id="pensieve-greeting">
-            {% if user.is_authenticated %}
-                <p>Welcome, {{ user }}!</p>
-            {% else %}
-                <p>You are not logged in</p>
-            {% endif %}
-            </article>
+        <article id="pensieve-header-wrapper">
+            {% block header %}
+                <article id="pensieve-greeting">
+                {% if user.is_authenticated %}
+                    <p>Welcome, {{ user }}!</p>
+                {% else %}
+                    <p>You are not logged in</p>
+                {% endif %}
+                </article>
 
-            <article id="pensieve-logo">
-                <img src="{% static 'images/pensieve.png' %}" />
-                <h1>Pensieve</h1>
-                <span id="pensieve-tagline">a place for memories</span>
-            </article>
+                <article id="pensieve-logo">
+                    <a href="{% url 'index' %}"><img src="{% static 'images/pensieve.png' %}" /></a>
+                    <a href="{% url 'index' %}"><h1>Pensieve</h1></a>
+                </article>
 
-            <article id="pensieve-nav">
-                <a href="{% url 'memories:index' %}">Memories</a> |
-                <p>Prompts</p>
-            </article>
-        {% endblock %}
+                <article id="pensieve-nav">
+                    <a href="{% url 'memories:index' %}">Memories</a> |
+                    <p>Prompts</p>
+                </article>
+            {% endblock %}
+        </article>
     </section>
 
     <section id="pensieve-content" role="main">
