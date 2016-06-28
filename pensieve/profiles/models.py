@@ -5,7 +5,7 @@ from django.db import models
 
 # Possible suffixes for names.
 SUFFIX_CHOICES = (
-    ('', '---------'),
+    ('', 'No Suffix'),
     ('S', 'Sr.'),
     ('J', 'Jr.'),
     ('2', 'II'),

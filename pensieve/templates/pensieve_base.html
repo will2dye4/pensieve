@@ -24,7 +24,7 @@
             {% block header %}
                 <article id="pensieve-greeting">
                 {% if user.is_authenticated %}
-                    <p>Welcome, {{ user }}!</p>
+                    <p>Welcome, {{ user.get_short_name }}!</p>
                 {% else %}
                     <p>You are not logged in</p>
                 {% endif %}
