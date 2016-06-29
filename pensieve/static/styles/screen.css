@@ -9,10 +9,19 @@ body {
 
 a {
     font-weight: bold;
+    text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline !important;
+}
+
+a:visited {
+    color: black;
+}
+
+h1 {
+    margin-top: 0;
 }
 
 #pensieve-header {
@@ -38,7 +47,7 @@ a:hover {
 */
 
 #pensieve-header a:visited {
-    color: white;
+    color: white !important;
 }
 
 #pensieve-header-wrapper {
@@ -69,7 +78,7 @@ a:hover {
 }
 
 #pensieve-logo a:hover {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 #pensieve-nav {
@@ -110,8 +119,21 @@ a:hover {
     padding: 0 15px;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .italic {
     font-style: italic;
+}
+
+.error {
+    color: #d82240;
+}
+
+.small {
+    font-size: 0.75em;
+    padding-right: 30px;
 }
 
 .right-align {
@@ -122,6 +144,10 @@ h1.pensieve-content-logo {
     font-family: "Edwardian Script ITC", cursive;
     font-size: 64pt;
     margin: 0;
+}
+
+ul.spaced-list li {
+    padding-bottom: 10px;
 }
 
 
@@ -150,7 +176,7 @@ input.submit {
     background: steelblue;
     color: #eeeeee;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -164,15 +190,17 @@ input[type=checkbox] {
 }
 
 section.form-wrapper {
-    padding: 30px 10px 10px 10px;
+    padding: 10px;
     background-color: #dddddd;
     border-radius: 10px;
     border: 2px solid black;
+    width: 90%;
+    margin: auto;
 }
 
 table.form {
     margin: 10px auto;
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -186,6 +214,7 @@ table.form tr td {
 
 table.form tr td.error {
     color: #d82240;
+    max-width: 150px;
 }
 
 table.form tr td.error ul {
@@ -197,12 +226,20 @@ table.form tr td.small {
     font-size: 0.85em;
 }
 
+table.form tr td.label {
+    width: 150px;
+}
+
 table.form tr td.left-padded {
     padding-left: 10px;
 }
 
 table.form tr td.right-padded {
     padding-right: 10px;
+}
+
+table.form tr td.right-full-padded {
+    padding-right: 40px;
 }
 
 table.form tr td.help-text {
@@ -212,6 +249,10 @@ table.form tr td.help-text {
 
 table.form tr td {
     padding-bottom: 20px;
+}
+
+table.form tr td.bottom {
+    padding-bottom: 0;
 }
 
 table.form tbody tr td.subheading {

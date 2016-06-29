@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.password_validation import validate_password
 
 from common.forms import PensieveModelForm
 from .models import PensieveUser
@@ -10,6 +11,18 @@ class PensieveUserCreationForm(PensieveModelForm):
 
     def __init__(self, *args, **kwargs):
         super(PensieveUserCreationForm, self).__init__(*args, **kwargs)
+
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        validate_password(password, self.instance)
+        return password
+
+    def save(self, commit=True):
+        user = super(PensieveUserCreationForm, self).save(commit=False)
+        user.set_password(self.cleaned_data['password'])
+        if commit:
+            user.save()
+        return user
 
     class Meta:
         model = PensieveUser

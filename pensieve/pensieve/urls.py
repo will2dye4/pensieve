@@ -17,10 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from pensieve import views
+
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', views.login, name='login'),
+    url(r'^logout/', views.logout, name='logout'),
+    url(r'^register/', views.register, name='register'),
     url(r'^memories/', include('memories.urls')),
     url(r'^profiles/', include('profiles.urls')),
 ]
